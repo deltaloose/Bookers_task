@@ -8,7 +8,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
   end
   def after_sign_in_path_for(resource)
-  	users_show_path
+  	user_path(current_user)
   end
   def after_sign_out_path_for(resource)
   	root_path
